@@ -1,0 +1,46 @@
+PROJETO BASE — PHP + MYSQL + PHPMYADMIN (SEM JAVASCRIPT)
+
+REQUISITOS
+- XAMPP (Apache + MySQL/MariaDB)
+- PHP 8+
+- Extensões PDO, pdo_mysql e mbstring habilitadas
+
+INSTALAÇÃO NO WINDOWS
+1. Extraia a pasta projeto_base_php_mysql para:
+   C:\xampp\htdocs\projeto_base_php_mysql
+2. Abra o XAMPP Control Panel e inicie Apache e MySQL.
+3. Acesse http://localhost/phpmyadmin
+4. Clique em Importar e selecione o arquivo banco.sql.
+5. Confira config/conexao.php. A configuração padrão do XAMPP costuma usar:
+   usuário: root
+   senha: vazia
+6. Abra:
+   http://localhost/projeto_base_php_mysql/
+
+ARQUIVOS
+- index.php: página inicial
+- cadastro.php: cadastro de usuário
+- login.php: autenticação
+- painel.php: página protegida
+- logout.php: encerra a sessão
+- config/conexao.php: conexão PDO com MySQL
+- includes/funcoes.php: funções compartilhadas e sessão
+- assets/css/style.css: design e responsividade
+- banco.sql: banco e tabela
+
+SEGURANÇA IMPLEMENTADA
+- PDO com Prepared Statements e prepares nativos.
+- password_hash() para armazenar senhas.
+- password_verify() para validar senha no login.
+- Validação de campos no servidor.
+- E-mail único no banco.
+- Escape de saída com htmlspecialchars().
+- Token CSRF em cadastro e login.
+- Regeneração do ID da sessão após login.
+- Painel protegido por sessão.
+
+IMPORTANTE
+O phpMyAdmin administra o MySQL; o PHP conecta-se diretamente ao MySQL via PDO.
+O projeto não utiliza JavaScript. Os efeitos visuais são feitos com CSS.
+Para publicação real na internet, configure HTTPS, credenciais com privilégios mínimos,
+limitação de tentativas de login e configurações de sessão apropriadas.
